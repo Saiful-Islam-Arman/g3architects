@@ -42,7 +42,7 @@
 .primary-bg{
   background-color: rgba(255, 144, 14, 0.1);
 }
-.section-title{
+.section-title, .logo{
   font-size: 2.9rem;
   font-weight: 700;
 }
@@ -51,11 +51,6 @@
 .navbar{
   justify-content: space-between;
   align-items: center;
-}
-
-.logo{
-  font-weight: 700;
-  font-size: 2.5rem;
 }
 
 /* nav style */
@@ -127,7 +122,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
-.fact-description{
+.fact-description, 
+.sponsors-text-area{
   max-width: 530px;
 }
 .single-card{
@@ -152,6 +148,23 @@
   margin-top: 5px;
 }
 
+/* our sponsors */
+.sponsors-text-area{
+  margin: auto;
+  text-align: center;
+}
+.sponsors-image{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin: 40px 0;
+}
+.sponsors-image img{
+  filter: grayscale(100%);
+}
+
+
+/* mobile responsive media query */
 @media screen and (max-width: 576px) {
   .navbar, 
   .nav-links{
@@ -164,7 +177,7 @@
   .teams{
     flex-direction: column-reverse;
   }
-  .team-image{
+  .team-image, .card-container{
     grid-template-columns: repeat(1, 1fr);
     flex-direction: column;
   }
@@ -176,6 +189,15 @@
   }
   .description{
     margin-top: -25px;
+  }
+  .card-container{
+    justify-items: center;
+    gap: 24px;
+  }
+  .sponsors-image{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    justify-items: center;
   }
 }
 
@@ -197,5 +219,15 @@
   }
   .description{
     margin-top: -25px;
+  }
+  .card-container{
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 15px;
+  }
+  .sponsors-image{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
   }
 }
